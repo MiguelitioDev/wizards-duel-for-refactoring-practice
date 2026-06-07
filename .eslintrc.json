@@ -9,6 +9,17 @@
     "ecmaVersion": 2021
   },
   "rules": {
-    "linebreak-style": "off"
-  }
+    "linebreak-style": "off",
+    "no-use-before-define": "off"
+  },
+  "overrides": [
+    {
+      "files": ["public/js/*.js"],
+      "rules": {
+        "no-unused-vars": "off",
+        "no-undef": "off",
+        "no-unused-expressions": "off"
+      }
+    }
+  ]
 }

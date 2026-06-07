@@ -12,7 +12,7 @@ router.get('/spells', async (req, res) => {
     const spells = rawSpells
       .filter((spell) => spell.attributes.name && spell.attributes.name !== '')
       .map((spell) => {
-        const attributes = spell.attributes;
+        const { attributes } = spell;
         return {
           id: spell.id,
           name: attributes.name,

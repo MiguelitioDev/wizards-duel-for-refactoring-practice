@@ -1,6 +1,12 @@
 const express = require('express');
 const { fetchCharacters } = require('../services/potterApi');
-const { calculatePower, calculateMagic, calculateDefense, calculateHp, shuffleArray } = require('../services/statsCalculator');
+const {
+  calculatePower,
+  calculateMagic,
+  calculateDefense,
+  calculateHp,
+  shuffleArray,
+} = require('../services/statsCalculator');
 const { PACK_SIZE } = require('../constants');
 
 const router = express.Router();
@@ -12,7 +18,7 @@ router.get('/pack', async (req, res) => {
     const characters = rawCharacters
       .filter((character) => character.attributes.name && character.attributes.name !== '' && character.attributes.image)
       .map((character) => {
-        const attributes = character.attributes;
+        const { attributes } = character;
         const defense = calculateDefense(attributes.ancestry);
         const hp = calculateHp(defense);
 
