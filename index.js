@@ -12,5 +12,5 @@ app.use('/api', spellsRouter);
 app.use('/api', gameRouter);
 
 app.listen(3000, () => {
-  console.error('rodando na porta 3000');
+  console.log('rodando na porta 3000'); // eslint-disable-line no-console
 });
