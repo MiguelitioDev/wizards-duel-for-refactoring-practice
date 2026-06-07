@@ -61,7 +61,9 @@ const calculateDefense = (ancestry) => {
   return DEFENSE_DEFAULT;
 };
 
-const calculateHp = (defense) => defense + Math.floor(Math.random() * HP_BONUS_RANGE) + HP_BONUS_MIN;
+const calculateHp = (defense) => (
+  defense + Math.floor(Math.random() * HP_BONUS_RANGE) + HP_BONUS_MIN
+);
 
 const calculateDamage = (category) => {
   if (category === 'Charm') return DAMAGE_CHARM;
